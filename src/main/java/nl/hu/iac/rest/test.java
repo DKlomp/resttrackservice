@@ -1,6 +1,7 @@
 package nl.hu.iac.rest;
 
 import com.sun.corba.se.impl.orb.ParserTable;
+import nl.hu.iac.service.ServiceProvider;
 
 import java.util.Arrays;
 
@@ -11,7 +12,9 @@ public class test {
     public static void main(String[] args) {
         String list;
 
-        list = "1 2 2  4 43 2 2 3 3 436 6 34 36";
+        list = "1 2 2  4 43 2 2 3 3 436 6 34 36 twaalf";
+
+        ServiceProvider.getTrackService().getStd(list);
         String[] array = list.split("\\s+",-1);
         int sum = 0;
         for (int i = 0; i < array.length; i++) {

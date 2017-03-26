@@ -26,5 +26,14 @@ public class TrackRestServiceTest {
         String list = "1 2 2  4 43 2 2 3 3 436 6 34 36";
         assertEquals("114.06475893442826", ServiceProvider.getTrackService().getStd(list));
     }
-
+    @Test
+    public void getStdwrongLetters() throws Exception {
+        String list = "1 2 2  4 43 2 2 3 3 436 6 34 36 kaas";
+        assertEquals("114.06475893442826", ServiceProvider.getTrackService().getStd(list));
+    }
+    @Test
+    public void getStdwrongEmpty() throws Exception {
+        String list = "";
+        assertEquals("114.06475893442826", ServiceProvider.getTrackService().getStd(list));
+    }
 }
